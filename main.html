@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coder Community</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #2b2b2b;
+            padding: 20px 0;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul li {
+            margin-left: 20px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .hero {
+            color: black;
+            text-align: center;
+            padding: 100px 0;
+            margin-bottom: -15%;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 40px;
+        }
+
+
+        .cta-buttons {
+            display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            transition: background 0.5s, transform 0.3s;
+        }
+        .cta-buttons .btn:hover{
+            transform: translateY(-10px);
+        }
+
+        .cta-buttons .btn {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 5px;
+        }
+
+        .cta-buttons .btn.secondary {
+            background-color: #007BFF;
+        }
+
+
+        section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .event-cards,
+        .blog-cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .event-card,
+        .blog-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 280px;
+            margin-bottom: 20px;
+            transition: background 0.5s, transform 0.5s;
+        }
+
+        .event-card img,
+        .blog-card img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+           
+        }
+        .event-card:hover, .blog-card:hover {
+      background: rgb(190, 188, 188);
+      transform: translateY(-10px);
+    }
+
+
+        .btn2 {
+            display: block;
+            margin: 50px auto;
+            width: fit-content;
+            border: 1px solid;
+            padding: 14px 50px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: black;
+            transition: background 0.5s;
+            cursor: pointer;
+        }
+
+        .btn2:hover {
+            background: rgb(152, 200, 231);
+        }
+
+        footer {
+            background-color: #2b2b2b;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 40px;
+        }
+
+        footer p {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        footer .ic {
+            color: white;
+            margin: 0 50px;
+            font-size: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .com {
+                display: none;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header nav ul li {
+                margin: 10px 0;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .cta-buttons .btn {
+                padding: 10px;
+                font-size: 16px;
+            }
+
+            section h2 {
+                font-size: 28px;
+            }
+
+            section p {
+                font-size: 16px;
+            }
+
+            .event-cards,
+            .blog-cards {
+                flex-direction: column;
+            }
+
+            .event-card,
+            .blog-card {
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .com {
+                display: none;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            section h2 {
+                font-size: 24px;
+            }
+
+            section p {
+                font-size: 14px;
+            }
+
+            .event-card,
+            .blog-card {
+                padding: 15px;
+            }
+
+            header .logo {
+                font-size: 20px;
+            }
+        }
+    </style>
+
+    <script src="https://kit.fontawesome.com/55472d616e.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Coder Community</div>
+            <nav>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Join the Ultimate Community for Coders!</h1>
+            <p>Connect, Learn, and Grow with Fellow Developers.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn">Join the Community</a>
+                <a href="#" class="btn secondary">Learn More</a><br>
+            </div>
+        </div>
+        <div><img src="community.gif" alt="Community" class="com"></div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h1><u>About Coder Community</u></h1>
+            <p>Community is a platform where developers come together to share knowledge, collaborate on projects, and
+                grow their skills.</p>
+        </div>
+    </section>
+
+    <section class="events">
+        <div class="container">
+            <h2>Upcoming Events</h2>
+            <div class="event-cards">
+                <div class="event-card">
+                    <img src="hackathon.png" alt="Event 1">
+                    <h3>Hackathon 2024</h3>
+                    <p>Join us for an exciting hackathon where you can showcase your coding skills.</p>
+                </div>
+                <div class="event-card">
+                    <img src="L2.jpg" alt="Event 2">
+                    <h3>Web Development Workshop</h3>
+                    <p>Learn the latest trends in web development from industry experts.</p>
+                </div>
+                <div class="event-card">
+                    <img src="AI.webp" alt="Event 3">
+                    <h3>AI & ML Seminar</h3>
+                    <p>Explore the world of AI and Machine Learning with hands-on sessions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="container" , style="text-align: left;">
+            <h2>Why Join Us?</h2>
+            <ul>
+                <li>Networking with like-minded developers.</li>
+                <li>Access to exclusive coding resources and tutorials.</li>
+                <li>Participation in coding challenges and hackathons.</li>
+                <li>Opportunities for mentorship and learning.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Members Say!!!</h2>
+            <div class="testimonial-carousel" , style="text-align: left;">
+                <div class="testimonial">
+                    <p><u>Jane Doe</u></p>
+                    <p>"Joining Coder Community was the best decision I made for my career. The support and knowledge
+                        I've gained are invaluable."</p>
+                    <br>
+                </div>
+                <div class="testimonial">
+                    <p><u>John Smith</u></p>
+                    <p>"The events and resources offered by the community have helped me grow as a developer."</p>
+                    <br>
+                </div>
+                <div class="testimonial">
+                    <p><u>Alice Johnson</u></p>
+                    <p>"I love the sense of camaraderie in this community. It's a great place to learn and share ideas."
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog">
+        <div class="container">
+            <h2>Latest Blog Posts</h2>
+            <div class="blog-cards">
+                <div class="blog-card">
+                    <img src="JS.png" alt="Blog 1">
+                    <h3>Understanding JavaScript Closures</h3>
+                    <p>Explore the concept of closures in JavaScript and how they work.</p>
+                </div>
+                <div class="blog-card">
+                    <img src="design.webp" alt="Blog 2">
+                    <h3>Top 10 Web Development Tools for 2024</h3>
+                    <p>Check out the latest tools that every web developer should know about.</p>
+                </div>
+                <div class="blog-card">
+                    <img src="ml.png" alt="Blog 3">
+                    <h3>Introduction to Machine Learning</h3>
+                    <p>Get started with Machine Learning and understand its core concepts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="join">
+        <div class="container">
+            <h2>Become a Member</h2>
+            <p>Join our community today and start your journey to becoming a better coder.</p>
+            <a href="#" class="btn2">SignUp Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Events</a>
+                <a href="#">Blog</a>
+                <a href="#">Join Us</a>
+                <a href="#">Contact</a>
+            </div>
+            <br>
+            <div class="social-media">
+                <a class="ic" href=""><i class="fa-brands fa-linkedin"></i></a>
+                <a class="ic" href=""><i class="fa-brands fa-square-instagram"></i></a>
+                <a class="ic" href=""><i class="fa-brands fa-github"></i></a>
+            </div>
+            <p>© 2024 Coder Community. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
