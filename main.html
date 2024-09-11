@@ -29,48 +29,71 @@
         }
 
         header {
-            background-color: #2b2b2b;
-            padding: 20px 0;
-            color: #fff;
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        #navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        header .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        header nav ul {
-            list-style: none;
+        .logo {
             display: flex;
-            margin: 0;
-            padding: 0;
+            align-items: center;
         }
 
-        header nav ul li {
+        .logo img {
+            width: 60px;
+            background-color: white;
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-left: 10px;
+        }
+
+        .nav-links {
+            list-style: none;
+        }
+
+        .nav-links li {
+            display: inline-block;
             margin-left: 20px;
         }
 
-        header nav ul li a {
-            color: #fff;
+        .nav-links a {
+            color: white;
             text-decoration: none;
+            padding: 5px 10px;
+            transition: background 0.3s ease;
         }
 
-        .hero {
+        .nav-links a:hover {
+            background-color: #575757;
+            border-radius: 4px;
+        }
+
+        #hero {
             color: black;
             text-align: center;
             padding: 100px 0;
             margin-bottom: -15%;
         }
 
-        .hero h1 {
+        #hero h1 {
             font-size: 48px;
             margin-bottom: 20px;
         }
 
-        .hero p {
+        #hero p {
             font-size: 24px;
             margin-bottom: 40px;
         }
@@ -82,7 +105,8 @@
             justify-content: center;
             transition: background 0.5s, transform 0.3s;
         }
-        .cta-buttons .btn:hover{
+
+        .cta-buttons .btn:hover {
             transform: translateY(-10px);
         }
 
@@ -114,7 +138,22 @@
             font-size: 18px;
             margin-bottom: 30px;
         }
+        #about{
+            font-size: 30px;
+        }
+        #about p{
+            font-size: 25px;
+        }
+        #benefits{
+            font-size: 30px;
+        }
+        #benefits li{
+            font-size: 18px;
+        }
 
+        #events{
+            font-size: 30px;
+        }
         .event-cards,
         .blog-cards {
             display: flex;
@@ -141,12 +180,14 @@
             max-width: 100%;
             border-radius: 10px;
             margin-bottom: 20px;
-           
+
         }
-        .event-card:hover, .blog-card:hover {
-      background: rgb(190, 188, 188);
-      transform: translateY(-10px);
-    }
+
+        .event-card:hover,
+        .blog-card:hover {
+            background: rgb(190, 188, 188);
+            transform: translateY(-10px);
+        }
 
 
         .btn2 {
@@ -164,6 +205,38 @@
 
         .btn2:hover {
             background: rgb(152, 200, 231);
+        }
+
+        .t1h {
+            font-size: 45px;
+        }
+
+        .t2h {
+            font-size: 25px;
+        }
+
+        .testimonial-carousel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 40px;
+            margin-top: 50px;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        .testimonial {
+            background-color: whitesmoke;
+            padding: 20px;
+            font-size: 14px;
+            font-weight: 400;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+
+        .user {
+            width: 80px;
+            height: 80px;
         }
 
         footer {
@@ -191,6 +264,10 @@
         }
 
         @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
             .com {
                 display: none;
             }
@@ -242,6 +319,10 @@
         }
 
         @media (max-width: 480px) {
+            .nav-links {
+                display: none;
+            }
+
             .com {
                 display: none;
             }
@@ -288,14 +369,23 @@
 
 <body>
     <header>
-        <div class="container">
-            <div class="logo">Coder Community</div>
-            <nav>
-            </nav>
-        </div>
+        <nav id="navbar">
+            <div class="logo">
+                <img src="logo.png"><span class="logo-text">Coder's Community</span>
+            </div>
+           
+            <ul class="nav-links">
+                <li><a href="#navbar">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#events">Event</a></li>
+                <li><a href="#testimonials">Members</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#join">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section class="hero">
+    <section id="hero">
         <div class="container">
             <h1>Join the Ultimate Community for Coders!</h1>
             <p>Connect, Learn, and Grow with Fellow Developers.</p>
@@ -306,8 +396,9 @@
         </div>
         <div><img src="community.gif" alt="Community" class="com"></div>
     </section>
+<br>
 
-    <section class="about">
+    <section id="about">
         <div class="container">
             <h1><u>About Coder Community</u></h1>
             <p>Community is a platform where developers come together to share knowledge, collaborate on projects, and
@@ -315,7 +406,19 @@
         </div>
     </section>
 
-    <section class="events">
+    <section id="benefits">
+        <div class="container" , style="text-align: left;">
+            <h2>Why Join Us?</h2>
+            <ul>
+                <li>Networking with like-minded developers.</li>
+                <li>Access to exclusive coding resources and tutorials.</li>
+                <li>Participation in coding challenges and hackathons.</li>
+                <li>Opportunities for mentorship and learning.</li>
+            </ul>
+        </div>
+    </section><BR><br>
+
+    <section id="events">
         <div class="container">
             <h2>Upcoming Events</h2>
             <div class="event-cards">
@@ -338,34 +441,29 @@
         </div>
     </section>
 
-    <section class="benefits">
-        <div class="container" , style="text-align: left;">
-            <h2>Why Join Us?</h2>
-            <ul>
-                <li>Networking with like-minded developers.</li>
-                <li>Access to exclusive coding resources and tutorials.</li>
-                <li>Participation in coding challenges and hackathons.</li>
-                <li>Opportunities for mentorship and learning.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="testimonials">
+    <section id="testimonials">
         <div class="container">
-            <h2>What Our Members Say!!!</h2>
+            <h1 class="t1h">Inspiring Coders, Inspiring Stories</h1>
+            <p class="t2h">Our community is made up of talented individuals from all walks of life. Discover their
+                journeys and how
+                they're shaping the future of technology.</p>
             <div class="testimonial-carousel" , style="text-align: left;">
                 <div class="testimonial">
+                    <img class="user" src="placeholder-user.jpg">
                     <p><u>Jane Doe</u></p>
                     <p>"Joining Coder Community was the best decision I made for my career. The support and knowledge
                         I've gained are invaluable."</p>
-                    <br>
                 </div>
+
                 <div class="testimonial">
+                    <img class="user" src="placeholder-user.jpg">
                     <p><u>John Smith</u></p>
                     <p>"The events and resources offered by the community have helped me grow as a developer."</p>
                     <br>
                 </div>
+
                 <div class="testimonial">
+                    <img class="user" src="placeholder-user.jpg">
                     <p><u>Alice Johnson</u></p>
                     <p>"I love the sense of camaraderie in this community. It's a great place to learn and share ideas."
                     </p>
@@ -375,7 +473,7 @@
         </div>
     </section>
 
-    <section class="blog">
+    <section id="blog">
         <div class="container">
             <h2>Latest Blog Posts</h2>
             <div class="blog-cards">
@@ -398,7 +496,7 @@
         </div>
     </section>
 
-    <section class="join">
+    <section id="join">
         <div class="container">
             <h2>Become a Member</h2>
             <p>Join our community today and start your journey to becoming a better coder.</p>
@@ -407,21 +505,12 @@
     </section>
 
     <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="#">About</a>
-                <a href="#">Events</a>
-                <a href="#">Blog</a>
-                <a href="#">Join Us</a>
-                <a href="#">Contact</a>
-            </div>
-            <br>
-            <div class="social-media">
-                <a class="ic" href=""><i class="fa-brands fa-linkedin"></i></a>
-                <a class="ic" href=""><i class="fa-brands fa-square-instagram"></i></a>
-                <a class="ic" href=""><i class="fa-brands fa-github"></i></a>
-            </div>
-            <p>© 2024 Coder Community. All Rights Reserved.</p>
+        <div class="social-media">
+            <a class="ic" href=""><i class="fa-brands fa-linkedin"></i></a>
+            <a class="ic" href=""><i class="fa-brands fa-square-instagram"></i></a>
+            <a class="ic" href=""><i class="fa-brands fa-github"></i></a>
+        </div>
+        <p>© 2024 Coder Community. All Rights Reserved.</p>
         </div>
     </footer>
 </body>
